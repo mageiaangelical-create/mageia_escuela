@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mageia — Diana Mar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#3b2252;font-family:'Lato',sans-serif;color:#fff;min-height:100vh}
+.page{max-width:520px;margin:0 auto;padding:36px 16px 60px}
+.logo{font-family:'Cinzel',serif;font-size:46px;font-weight:700;color:#a48d5e;letter-spacing:10px;line-height:1;position:relative;display:inline-block}
+.logo-img{max-width:280px;height:auto;display:block;margin:0 auto}
+.star{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:14px;color:#a48d5e}
+.tagline{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#c9b48a;margin-top:6px}
+.divider{width:50px;height:1px;background:#a48d5e;margin:12px auto}
+.avatar{width:96px;height:96px;border-radius:50%;border:3px solid #a48d5e;object-fit:cover;object-position:top center;display:block;margin:0 auto 14px}
+.bio-name{font-family:'Cinzel',serif;font-size:17px;color:#fff;text-align:center;margin-bottom:6px}
+.bio-text{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,.82);text-align:center;max-width:380px;margin:0 auto}
+.bio-slogan{font-size:13px;color:#c9b48a;font-style:italic;text-align:center;margin-top:10px}
+.sec-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#a48d5e;text-align:center;margin-bottom:13px;font-weight:700}
+.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
+.soc-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(164,141,94,.25);border-radius:12px;padding:13px 6px;cursor:pointer;text-decoration:none;color:inherit;transition:background .2s}
+.soc-btn:hover{background:rgba(164,141,94,.13)}
+.soc-icon{font-size:20px}
+.soc-label{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.04em}
+.sep{display:flex;align-items:center;gap:12px;margin:22px 0 16px}
+.sep-line{flex:1;height:1px;background:rgba(164,141,94,.2)}
+.sep-star{color:#a48d5e;font-size:12px}
+.big-btn{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(164,141,94,.4);border-radius:14px;padding:15px 18px;margin-bottom:11px;cursor:pointer;transition:background .2s;width:100%;text-align:left}
+.big-btn:hover{background:rgba(164,141,94,.14)}
+.bb-icon{font-size:20px;flex-shrink:0;width:34px;text-align:center}
+.bb-info{flex:1}
+.bb-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:2px}
+.bb-desc{font-size:12px;color:rgba(255,255,255,.58);line-height:1.4}
+.bb-arrow{color:#a48d5e;font-size:18px;flex-shrink:0}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(164,141,94,.28);border-radius:18px;padding:22px;margin-bottom:15px}
+.card-title{font-family:'Cinzel',serif;font-size:14px;color:#a48d5e;margin-bottom:4px}
+.card-sub{font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.card-desc{font-size:13px;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:14px}
+.feat{display:flex;gap:8px;margin-bottom:5px;align-items:flex-start}
+.feat-dot{color:#a48d5e;font-size:10px;margin-top:4px;flex-shrink:0}
+.feat-text{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.5}
+.price-row{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.price-pill{background:rgba(164,141,94,.15);border:1px solid rgba(164,141,94,.35);border-radius:20px;padding:5px 14px;font-size:12px;color:#c9b48a;font-weight:700}
+.cta{display:block;text-align:center;background:#8444a0;border:none;border-radius:10px;padding:11px 20px;font-size:13px;font-weight:700;color:#fff;letter-spacing:.05em;cursor:pointer;transition:background .2s;width:100%;text-decoration:none}
+.cta:hover{background:#9a55b8}
+.cta-outline{background:transparent;border:1px solid #a48d5e;color:#c9b48a}
+.cta-outline:hover{background:rgba(164,141,94,.15)}
+.session-sep{border-top:1px solid rgba(255,255,255,.08);padding-top:13px;margin-top:13px}
+.tab-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:7px 14px;border-radius:20px;font-size:12px;border:1px solid rgba(164,141,94,.35);color:#c9b48a;cursor:pointer;background:transparent;transition:all .2s;font-family:'Lato',sans-serif}
+.tab.active,.tab:hover{background:#a48d5e;color:#fff;border-color:#a48d5e}
+.tab-content{display:none}.tab-content.show{display:block}
+.guia-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px}
+.guia-sub{font-size:12px;color:#c9b48a;margin-bottom:12px;font-style:italic}
+.guia-text{font-size:13px;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:10px}
+.karma-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.karma-card{background:rgba(164,141,94,.1);border:1px solid rgba(164,141,94,.2);border-radius:10px;padding:10px 12px}
+.karma-num{font-family:'Cinzel',serif;font-size:14px;color:#a48d5e;margin-bottom:3px}
+.karma-desc{font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.4}
+.calc-box{background:rgba(255,255,255,.05);border:1px solid rgba(164,141,94,.28);border-radius:18px;padding:24px;margin-bottom:15px}
+.calc-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#a48d5e;margin-bottom:12px;font-weight:700;display:block}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.calc-field label{font-size:11px;color:rgba(212,184,224,.85);letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px;display:block}
+.calc-field input,.calc-field select{padding:10px 13px;border-radius:10px;border:1px solid rgba(164,141,94,.4);background:rgba(255,255,255,.08);color:#fff;font-size:14px;width:100%;outline:none;font-family:'Lato',sans-serif}
+.calc-field option{color:#333;background:#fff}
+.calc-btn{width:100%;padding:13px;border-radius:11px;border:none;background:#8444a0;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:background .2s;font-family:'Lato',sans-serif}
+.calc-btn:hover{background:#9a55b8}
+.result-box{background:rgba(255,255,255,.05);border:1px solid rgba(164,141,94,.28);border-radius:18px;padding:22px;margin-top:15px}
+.result-num{width:60px;height:60px;border-radius:50%;border:2px solid #a48d5e;background:#8444a0;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;color:#fff;flex-shrink:0}
+.result-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.result-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:3px}
+.result-main{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
+.result-sub{font-size:11px;color:#d4b8e0}
+.result-desc{font-size:13px;color:rgba(255,255,255,.82);line-height:1.7;margin-bottom:14px}
+.claves-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#a48d5e;margin-bottom:7px}
+.cuidado-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#e8a0a0;margin-bottom:7px;margin-top:12px;border-top:1px solid rgba(212,184,224,.18);padding-top:12px}
+.footer{text-align:center;margin-top:36px;padding-top:20px;border-top:1px solid rgba(164,141,94,.14)}
+.footer-logo{font-family:'Cinzel',serif;font-size:15px;color:#a48d5e;letter-spacing:6px;margin-bottom:5px}
+.footer-sub{font-size:10px;color:rgba(255,255,255,.28);letter-spacing:.15em;text-transform:uppercase}
+.section{display:none}.section.active{display:block}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div style="text-align:center;padding-bottom:28px">
+    <img src="LOGOTIPO DORADO.png" alt="Mageia - Escuela Integral de Autoconocimiento" class="logo-img" onerror="this.style.display='none'"/>
+    <div class="divider"></div>
+  </div>
+
+  <!-- PERFIL -->
+  <div style="margin-bottom:28px">
+    <!-- REEMPLAZA LA RUTA DE LA FOTO: pon tu imagen como "foto.jpg" en la misma carpeta -->
+    <img src="foto.jpg" alt="Diana Mar" class="avatar" onerror="this.style.display='none'"/>
+    <div class="bio-name">Diana Mar</div>
+    <p class="bio-text">Guía y acompañante en procesos de autoconocimiento. En Mageia aprendes a identificar quién eres, cuál es tu propósito y cómo tomar decisiones alineadas con tu esencia.<br><br>Integramos la numerología y el tarot sistémico como herramientas prácticas para comprender tu vida y habitar tu lugar en el mundo.</p>
+    <p class="bio-slogan">✦ Te acompaño a habitar tu lugar en el mundo desde tu esencia y propósito ✦</p>
+  </div>
+
+  <!-- REDES -->
+  <div class="sec-label">Encuéntrame en</div>
+  <div class="social-grid">
+    <a href="https://www.instagram.com/mageia_escuela/" target="_blank" class="soc-btn"><span class="soc-icon">📸</span><span class="soc-label">Instagram</span></a>
+    <a href="https://www.youtube.com/channel/UC8v13WWAVuzPaqXSKpHkhUg" target="_blank" class="soc-btn"><span class="soc-icon">▶️</span><span class="soc-label">YouTube</span></a>
+    <a href="https://www.tiktok.com/@mageia_escuela" target="_blank" class="soc-btn"><span class="soc-icon">🎵</span><span class="soc-label">TikTok</span></a>
+    <a href="https://wa.me/message/S3DUZAM42X6EC1" target="_blank" class="soc-btn"><span class="soc-icon">💬</span><span class="soc-label">WhatsApp</span></a>
+  </div>
+
+  <!-- ACCESOS RÁPIDOS -->
+  <div class="sep"><div class="sep-line"></div><span class="sep-star">✦</span><div class="sep-line"></div></div>
+  <div class="sec-label">Recursos gratuitos</div>
+
+  <button class="big-btn" onclick="showSection('guia')">
+    <div class="bb-icon">🎁</div>
+    <div class="bb-info"><div class="bb-title">Guía gratuita</div><div class="bb-desc">Descubre tus 4 números de identidad energética</div></div>
+    <div class="bb-arrow">›</div>
+  </button>
+  <button class="big-btn" onclick="showSection('calc')">
+    <div class="bb-icon">🔢</div>
+    <div class="bb-info"><div class="bb-title">Calculadora energética</div><div class="bb-desc">Calcula tu año y mes personal</div></div>
+    <div class="bb-arrow">›</div>
+  </button>
+
+  <!-- SECCIÓN GUÍA -->
+  <div id="sec-guia" class="section">
+    <div class="sep"><div class="sep-line"></div><span class="sep-star">✦</span><div class="sep-line"></div></div>
+    <div class="sec-label">Guía gratuita</div>
+    <div class="card">
+      <div class="card-title">Descubre tu Identidad Energética</div>
+      <div class="card-sub">El primer paso hacia tu Yo auténtico</div>
+      <p class="card-desc">Tu identidad energética es el código único que revela quién eres, tus dones, talentos y las herramientas con las que pactaste encarnar esta vida.</p>
+      <div class="tab-row">
+        <button class="tab active" onclick="showTab('karma',this)">Tu Karma</button>
+        <button class="tab" onclick="showTab('esencia',this)">Tu Esencia</button>
+        <button class="tab" onclick="showTab('dharma',this)">Tu Dharma</button>
+        <button class="tab" onclick="showTab('personalidad',this)">Tu Personalidad</button>
+      </div>
+      <div id="tab-karma" class="tab-content show">
+        <div class="guia-title">La vibración del Karma</div>
+        <div class="guia-sub">Lo que vienes a equilibrar</div>
+        <p class="guia-text">Tu número de karma muestra los patrones de vida que vienes a reconocer, sanar y transformar. No es un castigo: es una oportunidad de evolución.</p>
+        <p class="guia-text" style="color:#c9b48a;font-style:italic">Se calcula según tu mes de nacimiento:</p>
+        <div class="karma-grid">
+          <div class="karma-card"><div class="karma-num">Karma 1</div><div class="karma-desc">La dependencia y a desarrollar tu autonomía personal. (Enero / Octubre)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 2</div><div class="karma-desc">La dificultad para vincularte y crear relaciones equilibradas. (Febrero)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 3</div><div class="karma-desc">La represión de tu voz y a expresarte con autenticidad. (Marzo / Diciembre)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 4</div><div class="karma-desc">La procrastinación y la falta de disciplina. (Abril)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 5</div><div class="karma-desc">El estancamiento y a recuperar tu libertad. (Mayo)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 6</div><div class="karma-desc">Vínculos tóxicos y amar desde un lugar sano. (Junio)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 7</div><div class="karma-desc">La evasión y la distancia emocional. (Julio)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 8</div><div class="karma-desc">El mal uso de lo material y el poder con integridad. (Agosto)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 9</div><div class="karma-desc">La carga por culpas que no te corresponden. (Septiembre)</div></div>
+          <div class="karma-card"><div class="karma-num">Karma 11</div><div class="karma-desc">La desconexión de tus dones y sabiduría. (Noviembre)</div></div>
+        </div>
+      </div>
+      <div id="tab-esencia" class="tab-content">
+        <div class="guia-title">La vibración de tu Esencia</div>
+        <div class="guia-sub">Tu verdadera naturaleza</div>
+        <p class="guia-text">Tu número de esencia es quien realmente eres cuando nadie está mirando. Es la energía que fluye de forma natural cuando estás en paz contigo.</p>
+        <p class="guia-text" style="color:#c9b48a;font-style:italic">Se calcula según tu día de nacimiento:</p>
+        <div class="karma-grid">
+          <div class="karma-card"><div class="karma-num">Esencia 1</div><div class="karma-desc">Liderazgo innato y autonomía. (Días 1, 10, 19, 28)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 2</div><div class="karma-desc">Sensibilidad, diplomacia y cooperación. (Días 2, 20)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 3</div><div class="karma-desc">Creatividad, alegría de vivir, comunicación. (Días 3, 12, 21, 30)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 4</div><div class="karma-desc">Estabilidad, responsabilidad y trabajo metódico. (Días 4, 13, 31)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 5</div><div class="karma-desc">Libertad, adaptabilidad y cambio. (Días 5, 14, 23)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 6</div><div class="karma-desc">Servicio, armonía y amor por el hogar. (Días 6, 15, 24)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 7</div><div class="karma-desc">Búsqueda espiritual, introspección. (Días 7, 16, 25)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 8</div><div class="karma-desc">Ambición, poder personal. (Días 8, 17, 26)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 9</div><div class="karma-desc">Humanitarismo y visión global. (Días 9, 18, 27)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 11</div><div class="karma-desc">Inspiración espiritual, intuición. (Días 11, 29)</div></div>
+          <div class="karma-card"><div class="karma-num">Esencia 22</div><div class="karma-desc">Maestría constructiva, visión práctica. (Día 22)</div></div>
+        </div>
+      </div>
+      <div id="tab-dharma" class="tab-content">
+        <div class="guia-title">La vibración del Dharma</div>
+        <div class="guia-sub">Tus dones y sabiduría ancestral</div>
+        <p class="guia-text">El número de dharma habla de los talentos, aprendizajes y fortalezas que has cultivado en otras vidas y que hoy te acompañan.</p>
+        <p class="guia-text" style="color:#c9b48a;font-style:italic">Se calcula según tu año de nacimiento:</p>
+        <div class="karma-grid">
+          <div class="karma-card"><div class="karma-num">Dharma 1</div><div class="karma-desc">Capacidad de liderar con autenticidad.</div></div>
+          <div class="karma-card"><div class="karma-num">Dharma 2</div><div class="karma-desc">Habilidad para unir y sanar relaciones.</div></div>
+          <div class="karma-card"><div class="karma-num">Dharma 3</div><div class="karma-desc">Talento para inspirar a través del arte y la palabra.</div></div>
+          <div class="karma-card"><div class="karma-num">Dharma 5</div><div class="karma-desc">Romper límites y traer renovación.</div></div>
+          <div class="karma-card"><div class="karma-num">Dharma 7</div><div class="karma-desc">Guiar con sabiduría espiritual y profundidad.</div></div>
+          <div class="karma-card"><div class="karma-num">Dharma 9</div><div class="karma-desc">Sanar, enseñar y acompañar cambios sociales.</div></div>
+          <div class="karma-card"><div class="karma-num">Dharma 11</div><div class="karma-desc">Activar consciencia colectiva e inspirar caminos espirituales.</div></div>
+          <div class="karma-card"><div class="karma-num">Dharma 22</div><div class="karma-desc">Materializar sueños visionarios que transformen comunidades.</div></div>
+        </div>
+      </div>
+      <div id="tab-personalidad" class="tab-content">
+        <div class="guia-title">La vibración de tu Personalidad</div>
+        <div class="guia-sub">La máscara que aprendiste a usar</div>
+        <p class="guia-text">Refleja cómo te adaptaste al mundo exterior. Es la imagen que proyectas para ser aceptada, amada o reconocida.</p>
+        <p class="guia-text" style="color:#c9b48a;font-style:italic">Se calcula sumando todos los dígitos de tu fecha de nacimiento completa, reduciendo a un dígito (excepto 11 y 22).</p>
+        <div class="karma-grid">
+          <div class="karma-card"><div class="karma-num">Personalidad 1</div><div class="karma-desc">"Aprendí a ser autosuficiente para ganar respeto."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 2</div><div class="karma-desc">"Me adapté siendo la mediadora que sostiene la paz."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 3</div><div class="karma-desc">"Usé mi humor y creatividad para ser aceptada."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 4</div><div class="karma-desc">"Mostré ser responsable para sentirme segura."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 5</div><div class="karma-desc">"Encanté con mi energía para evadir el dolor."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 6</div><div class="karma-desc">"Cuidé a otros para ser amada."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 7</div><div class="karma-desc">"Me protegí detrás de una mente lógica."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 8</div><div class="karma-desc">"Proyecté fuerza para no mostrar vulnerabilidad."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 9</div><div class="karma-desc">"Me convertí en quien ayuda a todos para sentirme útil."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 11</div><div class="karma-desc">"Inspiré siempre a los otros para evadir mi vulnerabilidad."</div></div>
+          <div class="karma-card"><div class="karma-num">Personalidad 22</div><div class="karma-desc">"Me hice cargo de grandes responsabilidades para que me amaran."</div></div>
+        </div>
+      </div>
+      <div style="margin-top:18px">
+        <a href="https://wa.me/message/S3DUZAM42X6EC1" target="_blank" class="cta">Recibir guía completa por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN CALCULADORA -->
+  <div id="sec-calc" class="section">
+    <div class="sep"><div class="sep-line"></div><span class="sep-star">✦</span><div class="sep-line"></div></div>
+    <div class="sec-label">Calculadora energética</div>
+    <div class="calc-box">
+      <span class="calc-label">Fecha de nacimiento</span>
+      <div class="calc-grid">
+        <div class="calc-field"><label>Día</label><input type="number" id="c-dia" min="1" max="31" placeholder="DD"/></div>
+        <div class="calc-field"><label>Mes de nacimiento</label>
+          <select id="c-mes">
+            <option value="">Mes...</option>
+            <option value="1">Enero</option><option value="2">Febrero</option>
+            <option value="3">Marzo</option><option value="4">Abril</option>
+            <option value="5">Mayo</option><option value="6">Junio</option>
+            <option value="7">Julio</option><option value="8">Agosto</option>
+            <option value="9">Septiembre</option><option value="10">Octubre</option>
+            <option value="11">Noviembre</option><option value="12">Diciembre</option>
+          </select>
+        </div>
+      </div>
+      <span class="calc-label">Período a consultar</span>
+      <div class="calc-grid">
+        <div class="calc-field"><label>Año</label>
+          <select id="c-anio">
+            <option value="2024">2024</option><option value="2025">2025</option>
+            <option value="2026" selected>2026</option><option value="2027">2027</option>
+          </select>
+        </div>
+        <div class="calc-field"><label>Mes</label>
+          <select id="c-mesq">
+            <option value="1">Enero</option><option value="2">Febrero</option>
+            <option value="3">Marzo</option><option value="4">Abril</option>
+            <option value="5" selected>Mayo</option><option value="6">Junio</option>
+            <option value="7">Julio</option><option value="8">Agosto</option>
+            <option value="9">Septiembre</option><option value="10">Octubre</option>
+            <option value="11">Noviembre</option><option value="12">Diciembre</option>
+          </select>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcular()">Calcular mi numerología</button>
+    </div>
+    <div id="calc-result"></div>
+  </div>
+
+  <!-- PROGRAMAS -->
+  <div class="sep"><div class="sep-line"></div><span class="sep-star">✦</span><div class="sep-line"></div></div>
+  <div class="sec-label">Programas Mageia</div>
+
+  <div class="card">
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px">
+      <div style="font-size:22px;flex-shrink:0;margin-top:2px">🌌</div>
+      <div><div class="card-title">Universo Mageia</div><div class="card-sub">Membresía · Formación continua</div></div>
+    </div>
+    <p class="card-desc">Espacio de formación y acompañamiento donde integras la numerología y el tarot sistémico en tu vida diaria para tomar decisiones con claridad y propósito.</p>
+    <div style="margin-bottom:14px">
+      <div class="feat"><span class="feat-dot">✦</span><span class="feat-text">Curso base de numerología y tarot sistémico</span></div>
+      <div class="feat"><span class="feat-dot">✦</span><span class="feat-text">Clases en vivo todos los domingos + acceso a grabaciones</span></div>
+      <div class="feat"><span class="feat-dot">✦</span><span class="feat-text">Comunidad activa e integración práctica</span></div>
+      <div class="feat"><span class="feat-dot">✦</span><span class="feat-text">Caminos: numerología personal, del tiempo, para emprendedores y tarot sistémico</span></div>
+    </div>
+    <div class="price-row"><span class="price-pill">$15 USD / mes</span><span class="price-pill">$135 USD / año</span></div>
+    <a href="https://go.hotmart.com/I99946479V" target="_blank" class="cta">Unirme a Universo Mageia</a>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px">
+      <div style="font-size:22px;flex-shrink:0;margin-top:2px">🔮</div>
+      <div><div class="card-title">Sesiones 1:1</div><div class="card-sub">Acompañamiento personalizado</div></div>
+    </div>
+    <div>
+      <div class="session-sep" style="border-top:none;padding-top:0;margin-top:0">
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px">🔢 Numerología</div>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.68);line-height:1.6;margin-bottom:10px">
+          <strong style="color:#c9b48a">Carta natal</strong> — Comprende quién eres, tu propósito y los aspectos internos que vienes a trabajar.<br>
+          <strong style="color:#c9b48a">Proyección anual</strong> — Descubre la energía de tu año y cómo aprovechar cada mes.<br>
+          <strong style="color:#c9b48a">Sinastría de pareja</strong> — Compatibilidad y propósito de la relación.
+        </p>
+        <a href="https://calendly.com/mageia-angelical/60min" target="_blank" class="cta" style="margin-bottom:0">Agendar sesión de numerología</a>
+      </div>
+      <div class="session-sep">
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px">🃏 Tarot sistémico</div>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.68);line-height:1.6;margin-bottom:10px">Explora bloqueos, patrones y situaciones desde una mirada profunda que integra tu historia personal y familiar.</p>
+        <a href="https://calendly.com/mageia-angelical/60min" target="_blank" class="cta" style="margin-bottom:0">Agendar sesión de tarot</a>
+      </div>
+      <div class="session-sep">
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px">👼 Limpieza energética con ángeles</div>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.68);line-height:1.6;margin-bottom:10px">Espacio presencial de armonización energética para liberar cargas y restaurar tu equilibrio interno.</p>
+        <a href="https://wa.me/message/S3DUZAM42X6EC1" target="_blank" class="cta cta-outline" style="margin-bottom:0">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">MAG✦IA</div>
+    <div class="footer-sub">Escuela Integral de Autoconocimiento</div>
+  </div>
+</div>
+
+<script>
+const MESES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const YEAR_DATA={
+  1:{l:'Identidad · Autonomía · Autoafirmación',f:'Autoconocimiento',d:'Un año de nuevos comienzos donde tu identidad está en primer plano. Es tiempo de afirmarte, liderar tu propio camino y sembrar las semillas de lo que deseas construir.'},
+  2:{l:'Armonía · Conexión · Cooperación',f:'Autoconocimiento',d:'Un año para cultivar vínculos y aprender a pedir apoyo. La cooperación y la escucha profunda son tus grandes maestras.'},
+  3:{l:'Creatividad · Expresión · Comunidad',f:'Autoconocimiento',d:'La creatividad y la comunicación florecen. Es momento de expresarte, compartir tus dones y conectar con tu comunidad desde la autenticidad.'},
+  4:{l:'Estabilidad · Raíces · Estructura',f:'Autoconocimiento',d:'Un año de construcción sólida. Es tiempo de ordenar, planificar y establecer bases firmes en todas las áreas de tu vida.'},
+  5:{l:'Libertad · Pasión · Progreso',f:'Expansión y Aprendizaje',d:'Un año de movimiento y cambios que te invitan a soltar el control y abrirte a lo nuevo. Tu libertad interior es la clave.'},
+  6:{l:'Cuidado · Equilibrio · Armonía',f:'Expansión y Aprendizaje',d:'Las relaciones, la familia y el cuidado propio son el centro de este año. Aprenderás a dar y recibir desde un lugar más equilibrado.'},
+  7:{l:'Compromiso · Especialización · Autoridad',f:'Expansión y Aprendizaje',d:'Un año de profundización y especialización. La introspección y el estudio te llevan a una versión más sabia y comprometida.'},
+  8:{l:'Éxito · Materialización · Empoderamiento',f:'Expansión y Aprendizaje',d:'El poder personal y la materialización son el tema central. Este año trae oportunidades para liderar, expandir y fortalecer tu área económica.'},
+  9:{l:'Transformación · Renacimiento · Liberación',f:'Maestría y Realización',d:'Un año de cierre y transformación profunda. Es tiempo de soltar lo que ya no te sirve y honrar el camino recorrido.'},
+  11:{l:'Propósito · Espiritualidad · Unidad',f:'Maestría y Realización',d:'Año maestro de gran sensibilidad espiritual e intuición elevada. Estás siendo llamada a conectar con tu propósito más profundo.'},
+  22:{l:'Creación · Enseñanza · Influencia',f:'Maestría y Realización',d:'Año maestro de visión y construcción a gran escala. Tienes la capacidad de materializar sueños que trascienden lo personal.'}
+};
+const MONTH_DATA={
+  1:{c:['Crear nuevas metas e ir por nuevos objetivos','Impulsar nuevos hábitos, rutinas y proyectos','Buscar mayor independencia en tus relaciones','Liderar proyectos e innovar en tu área'],cu:['La arrogancia, el ego, las confrontaciones','Actuar de forma impulsiva sin reflexionar']},
+  2:{c:['Solicitar apoyo y respaldo para tus proyectos','Fortalecer y armonizar tus vínculos importantes','Aprender a recibir y confiar en el Universo','Prepararte para mejoras inesperadas en tu economía'],cu:['Sensaciones de desconfianza o falta de apoyo','Extremos que desbalancean un vínculo']},
+  3:{c:['Abrirte a recibir nuevas propuestas','Buen momento para ventas o negocios','Conectar con nuevas personas y actividades','Posibilidades de expansión y fortuna'],cu:['Prometer más de lo que puedes cumplir','Tu comunicación: evita hablar a la ligera']},
+  4:{c:['Mejorar hábitos y rutinas (ejercicio, alimentación)','Ordenar y planificar tu trabajo y espacios','Trabajo duro y determinación para decisiones importantes','Trabajar tu miedo al compromiso'],cu:['La impaciencia para obtener resultados','La rigidez o super exigencia contigo misma']},
+  5:{c:['Cambios inesperados que traen movimiento a tu vida','Conectar con nuevas personas y hacer contactos','Explorar nuevas opciones en lo profesional','Energía para salir de lugares que te mantienen atada'],cu:['Temas financieros o laborales que se salen de control','Caer en cualquier tipo de excesos']},
+  6:{c:['Comprometerte de manera más seria en relaciones','Hacer planes en pareja o con familia','Atender tu salud, hábitos y cuidado personal','Establecer límites y generar acuerdos'],cu:['Crisis o movimientos en relaciones o sociedades','Exceso de carga familiar o socialización']},
+  7:{c:['Iniciar estudios largos o especializaciones','Atender temas legales, compromisos o deudas','Revisar proyectos existentes o hacer auditorías','Iniciar hábitos espirituales (meditación, yoga)'],cu:['Exceso de carga laboral o pendientes','Temas con la ley o finanzas que llaman tu atención']},
+  8:{c:['Hacer inversiones o inyectar capital a un proyecto','Mejorar tu productividad y enfoque en el trabajo','Asumir el liderazgo en escenarios profesionales','Oportunidades de avance o expansión en tu carrera'],cu:['Exceso en gastos o compras innecesarias','Luchas de poder con socio o pareja']},
+  9:{c:['Terminar pendientes y concluir proyectos','Tiempo de sanar heridas del pasado','Reencuentros para cerrar temas pendientes','Hacer limpiezas en todo nivel (físico, emocional, mental)'],cu:['Finales y temas que se cierran de improvisto','Estados emocionales extremos (tristeza, ira, culpa)']},
+  10:{c:['Conectar con nuevas personas y hacer contactos','Buen momento para proyectos creativos y comunicación','Activación de viajes y expansión','Posibilidades de fortuna de manera rápida'],cu:['Tu comunicación: evita hablar a la ligera','No iniciar varias cosas a la vez']},
+  11:{c:['Tomar decisiones importantes en trabajo o carrera','Conectar tu propósito con emprendimiento o negocio','Iniciar hábitos espirituales (meditación, yoga, oración)','Firmas de contratos y concretar alianzas'],cu:['Situaciones fiscales o legales sin atención','Exceso de carga mental y ansiedad']},
+  22:{c:['Planear proyectos a gran escala y visión a largo plazo','Liderar iniciativas grupales de alto impacto','Concretar alianzas estratégicas y compromisos duraderos','Conectar tu visión espiritual con acciones concretas'],cu:['Sentirte abrumada por la magnitud de lo que percibes','Asumir más responsabilidades de las que puedes sostener']}
+};
+
+function reduceNum(n){if(n===11||n===22)return n;if(n<10)return n;let s=String(n).split('').reduce((a,d)=>a+parseInt(d),0);return reduceNum(s);}
+function calcAP(d,m,y){let raw=String(d).split('').reduce((a,x)=>a+parseInt(x),0)+m+String(y).split('').reduce((a,x)=>a+parseInt(x),0);return reduceNum(raw);}
+function calcMP(ap,mq){return reduceNum(ap+mq);}
+
+function calcular(){
+  const d=parseInt(document.getElementById('c-dia').value);
+  const m=parseInt(document.getElementById('c-mes').value);
+  const ay=parseInt(document.getElementById('c-anio').value);
+  const mq=parseInt(document.getElementById('c-mesq').value);
+  if(!d||!m||d<1||d>31||m<1||m>12)return;
+  const hoy=new Date();
+  const cumple=new Date(ay,m-1,d);
+  const cumplioEsteAnio=ay<hoy.getFullYear()?true:(ay>hoy.getFullYear()?false:cumple<=hoy);
+  const anioCalc=cumplioEsteAnio?ay:ay-1;
+  const ap=calcAP(d,m,anioCalc);
+  const mp=calcMP(ap,mq);
+  const mpD=MONTH_DATA[mp]||MONTH_DATA[10];
+  const yd=YEAR_DATA[ap];
+  const alertHtml=cumplioEsteAnio?'':
+    `<div style="background:rgba(164,141,94,.12);border:1px solid rgba(164,141,94,.35);border-radius:10px;padding:11px 14px;margin-bottom:14px;font-size:12px;color:#c9b48a">Tu cumpleaños aún no ha llegado en ${ay}. Tu año personal se calcula con el año ${anioCalc}.</div>`;
+  const html=`${alertHtml}
+  <div class="result-box">
+    <div class="result-row">
+      <div class="result-num">${ap}</div>
+      <div><div class="result-label" style="color:#a48d5e">Año Personal</div><div class="result-main">${yd.l}</div><div class="result-sub">${yd.f}</div></div>
+    </div>
+    <p class="result-desc">${yd.d}</p>
+  </div>
+  <div class="result-box" style="margin-top:12px">
+    <div class="result-row">
+      <div class="result-num" style="border-color:#d4b8e0;background:rgba(164,141,94,.2)">${mp}</div>
+      <div><div class="result-label" style="color:#d4b8e0">Mes Personal — ${MESES[mq-1]}</div><div class="result-main">Vibración ${mp}</div></div>
+    </div>
+    <div class="claves-title">Claves del mes</div>
+    ${mpD.c.map(c=>`<div class="feat"><span class="feat-dot">✦</span><span class="feat-text">${c}</span></div>`).join('')}
+    <div class="cuidado-title">Cuidado con...</div>
+    ${mpD.cu.map(c=>`<div class="feat"><span class="feat-dot" style="color:#e8a0a0">◆</span><span class="feat-text" style="color:rgba(255,200,200,.82)">${c}</span></div>`).join('')}
+  </div>`;
+  const res=document.getElementById('calc-result');
+  res.innerHTML=html;
+}
+
+function showSection(id){
+  ['guia','calc'].forEach(s=>{
+    const el=document.getElementById('sec-'+s);
+    if(el) el.classList.remove('active');
+  });
+  const target=document.getElementById('sec-'+id);
+  if(target){
+    target.classList.add('active');
+    setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  }
+}
+
+function showTab(id, btn){
+  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('show'));
+  document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
+  const t=document.getElementById('tab-'+id);
+  if(t) t.classList.add('show');
+  if(btn) btn.classList.add('active');
+}
+</script>
+</body>
+</html>
