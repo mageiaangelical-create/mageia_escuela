@@ -22,7 +22,8 @@ body{background:#3b2252;font-family:'Lato',sans-serif;color:#fff;min-height:100v
 .social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
 .soc-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(164,141,94,.25);border-radius:12px;padding:13px 6px;cursor:pointer;text-decoration:none;color:inherit;transition:background .2s}
 .soc-btn:hover{background:rgba(164,141,94,.13)}
-.soc-icon{font-size:20px}
+.soc-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.soc-icon img{width:100%;height:100%;object-fit:contain}
 .soc-label{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.04em}
 .sep{display:flex;align-items:center;gap:12px;margin:22px 0 16px}
 .sep-line{flex:1;height:1px;background:rgba(164,141,94,.2)}
@@ -93,8 +94,7 @@ body{background:#3b2252;font-family:'Lato',sans-serif;color:#fff;min-height:100v
 
   <!-- PERFIL -->
   <div style="margin-bottom:28px">
-    <!-- REEMPLAZA LA RUTA DE LA FOTO: pon tu imagen como "foto.jpg" en la misma carpeta -->
-    <img src="foto.jpg" alt="Diana Mar" class="avatar" onerror="this.style.display='none'"/>
+    <img src="Foto de Perfil.png" alt="Diana Mar" class="avatar" onerror="this.style.display='none'"/>
     <div class="bio-name">Diana Mar</div>
     <p class="bio-text">Guía y acompañante en procesos de autoconocimiento. En Mageia aprendes a identificar quién eres, cuál es tu propósito y cómo tomar decisiones alineadas con tu esencia.<br><br>Integramos la numerología y el tarot sistémico como herramientas prácticas para comprender tu vida y habitar tu lugar en el mundo.</p>
     <p class="bio-slogan">✦ Te acompaño a habitar tu lugar en el mundo desde tu esencia y propósito ✦</p>
@@ -103,10 +103,10 @@ body{background:#3b2252;font-family:'Lato',sans-serif;color:#fff;min-height:100v
   <!-- REDES -->
   <div class="sec-label">Encuéntrame en</div>
   <div class="social-grid">
-    <a href="https://www.instagram.com/mageia_escuela/" target="_blank" class="soc-btn"><span class="soc-icon">📸</span><span class="soc-label">Instagram</span></a>
-    <a href="https://www.youtube.com/channel/UC8v13WWAVuzPaqXSKpHkhUg" target="_blank" class="soc-btn"><span class="soc-icon">▶️</span><span class="soc-label">YouTube</span></a>
-    <a href="https://www.tiktok.com/@mageia_escuela" target="_blank" class="soc-btn"><span class="soc-icon">🎵</span><span class="soc-label">TikTok</span></a>
-    <a href="https://wa.me/message/S3DUZAM42X6EC1" target="_blank" class="soc-btn"><span class="soc-icon">💬</span><span class="soc-label">WhatsApp</span></a>
+    <a href="https://www.instagram.com/mageia_escuela/" target="_blank" class="soc-btn"><span class="soc-icon"><img src="instagram.png" alt="Instagram"/></span><span class="soc-label">Instagram</span></a>
+    <a href="https://www.youtube.com/channel/UC8v13WWAVuzPaqXSKpHkhUg" target="_blank" class="soc-btn"><span class="soc-icon"><img src="youtube.png" alt="YouTube"/></span><span class="soc-label">YouTube</span></a>
+    <a href="https://www.tiktok.com/@mageia_escuela" target="_blank" class="soc-btn"><span class="soc-icon"><img src="tiktok.png" alt="TikTok"/></span><span class="soc-label">TikTok</span></a>
+    <a href="https://wa.me/message/S3DUZAM42X6EC1" target="_blank" class="soc-btn"><span class="soc-icon"><img src="whatsapp.png" alt="WhatsApp"/></span><span class="soc-label">WhatsApp</span></a>
   </div>
 
   <!-- ACCESOS RÁPIDOS -->
