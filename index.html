@@ -30,7 +30,8 @@ body{background:#3b2252;font-family:'Lato',sans-serif;color:#fff;min-height:100v
 .sep-star{color:#a48d5e;font-size:12px}
 .big-btn{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(164,141,94,.4);border-radius:14px;padding:15px 18px;margin-bottom:11px;cursor:pointer;transition:background .2s;width:100%;text-align:left}
 .big-btn:hover{background:rgba(164,141,94,.14)}
-.bb-icon{font-size:20px;flex-shrink:0;width:34px;text-align:center}
+.bb-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bb-icon img{width:100%;height:100%;object-fit:contain}
 .bb-info{flex:1}
 .bb-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:2px}
 .bb-desc{font-size:12px;color:rgba(255,255,255,.58);line-height:1.4}
@@ -116,12 +117,12 @@ body{background:#3b2252;font-family:'Lato',sans-serif;color:#fff;min-height:100v
   <div class="sec-label">Recursos gratuitos</div>
 
   <button class="big-btn" onclick="showSection('guia')">
-    <div class="bb-icon">🎁</div>
+    <div class="bb-icon"><img src="regalo.png" alt="Guía gratuita" onerror="this.style.display='none'"/></div>
     <div class="bb-info"><div class="bb-title">Guía gratuita</div><div class="bb-desc">Descubre tus 4 números de identidad energética</div></div>
     <div class="bb-arrow">›</div>
   </button>
   <button class="big-btn" onclick="showSection('calc')">
-    <div class="bb-icon">🔢</div>
+    <div class="bb-icon"><img src="calculadora.png" alt="Calculadora energética" onerror="this.style.display='none'"/></div>
     <div class="bb-info"><div class="bb-title">Calculadora energética</div><div class="bb-desc">Calcula tu año y mes personal</div></div>
     <div class="bb-arrow">›</div>
   </button>
